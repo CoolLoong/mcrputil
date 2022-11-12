@@ -20,12 +20,12 @@ jobs:
       - uses: actions-rs/cargo@v1
         with:
           use-cross: true
-          command: build --release
-          args: --target x86_64-pc-windows-gnu
+          command: build
+          args: --release --all-features --target x86_64-pc-windows-gnu
       - run: ls ./target
-      - name: Archive
-        uses: actions/upload-artifact@v3
-        if: success()
-        with:
-          name: PowerNukkitX-Libs
-          path: ./target/release
+      #- name: Archive
+      #  uses: actions/upload-artifact@v3
+      #  if: success()
+      #  with:
+      #    name: PowerNukkitX-Libs
+      #    path: ./target/release
