@@ -20,7 +20,7 @@ jobs:
       - uses: actions-rs/cargo@v1
         with:
           use-cross: true
-          command: build --release --all-features
+          command: build --release
           args: --target x86_64-pc-windows-gnu
       - run: ls ./target
       - name: Archive
